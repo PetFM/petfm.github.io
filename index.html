@@ -1,10 +1,352 @@
 <!DOCTYPE html>
-<html>
-<title>HTML Tutorial</title>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Vet – Tím 13 FIIT STU</title>
+<meta name="description" content="AI Vet – AI asistent, ktorý pomáha majiteľom zvierat a veterinárom pred návštevou a po nej. Tímový projekt, Tím 13, FIIT STU.">
+<link rel="icon" type="image/webp" href="assets/img/logo.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito:wght@500;600;700;800&display=swap">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+
+<script src="js/lang.js"></script>
+<script src="js/config.js" defer></script>
+<script src="js/team.js" defer></script>
+<script src="js/chat.js" defer></script>
+<script src="js/survey-gate.js" defer></script>
+<script src="js/main.js" defer></script>
+</head>
 <body>
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><img src="assets/img/logo.webp" alt="" width="46" height="46">AI Vet</a>
+    <ul>
+      <li><a href="#poslanie"><span class="sk">Poslanie</span><span class="en">Mission</span></a></li>
+      <li><a href="#aplikacia"><span class="sk">Aplikácia</span><span class="en">The app</span></a></li>
+      <li><a href="#funkcie"><span class="sk">Funkcie</span><span class="en">Features</span></a></li>
+      <li><a href="#tim"><span class="sk">Tím</span><span class="en">Team</span></a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="seg" role="group" aria-label="Jazyk / Language">
+        <button type="button" data-l="sk" aria-pressed="true">SK</button><button type="button" data-l="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-p btn-sm" href="#zapoj-sa"><span class="sk">Zapoj sa</span><span class="en">Get involved</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap hero-g">
+    <div class="hero-copy">
+      <h1 class="sk">Návšteva veterinára, <span>pripravená vopred.</span></h1>
+      <h1 class="en">Vet visits, <span>prepared in advance.</span></h1>
+      <p class="lead sk">AI Vet je mobilná aplikácia s AI asistentom. Pred návštevou sa majiteľa opýta, čo sa so zvieraťom deje, a pripraví z toho prehľadné zhrnutie pre veterinára. Po návšteve pripomenie lieky a uchová pokyny.</p>
+      <p class="lead en">AI Vet is a mobile app with an AI assistant. Before a visit it asks the owner what is going on with their pet and turns it into a clear summary for the vet. Afterwards it reminds them about medication and keeps the instructions.</p>
+      <div class="cta">
+        <a class="btn btn-p" data-link="survey" data-survey-gate href="#" target="_blank" rel="noopener"><svg class="ic"><use href="assets/icons.svg#i-note-pencil"/></svg><span class="sk">Vyplniť dotazník</span><span class="en">Take the survey</span><svg class="ic"><use href="assets/icons.svg#i-arrow"/></svg></a>
+        <a class="btn-link" href="#zapoj-sa"><svg class="ic"><use href="assets/icons.svg#i-phone"/></svg><span class="sk">Prototyp a dotazník</span><span class="en">Prototype &amp; survey</span><svg class="ic"><use href="assets/icons.svg#i-caret"/></svg></a>
+      </div>
+      <div class="tags">
+        <span class="tag">React Native</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
+        <span class="tag"><span class="sk">Dáta v EÚ</span><span class="en">Data in the EU</span></span>
+        <span class="tag"><span class="sk">Slovenčina</span><span class="en">Slovak language</span></span>
+      </div>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <svg class="deco deco-1"><use href="assets/icons.svg#i-heart"/></svg>
+      <svg class="deco deco-2"><use href="assets/icons.svg#i-paw"/></svg>
+      <svg class="deco deco-3"><use href="assets/icons.svg#i-bone"/></svg>
+      <svg class="deco deco-4"><use href="assets/icons.svg#i-paw"/></svg>
+      <svg class="deco deco-5"><use href="assets/icons.svg#i-heart"/></svg>
+      <svg class="deco deco-6"><use href="assets/icons.svg#i-bone"/></svg>
+
+      <div class="phone"><div class="scr">
+        <div class="c-head">
+          <span class="c-back"><svg class="ic"><use href="assets/icons.svg#i-back"/></svg></span>
+          <span class="c-av"><svg class="ic"><use href="assets/icons.svg#i-paw"/></svg></span>
+          <div><b><span class="sk">AI Vet asistent</span><span class="en">AI Vet assistant</span></b>
+            <small><span class="sk">O Bojarovi</span><span class="en">About Bojar</span><svg class="ic"><use href="assets/icons.svg#i-caret"/></svg></small></div>
+        </div>
+        <div class="c-body" id="chat">
+          <div class="b b-me"><span class="sk">Od minulého týždňa sa veľa škrabe.</span><span class="en">He's been scratching a lot since last week.</span></div>
+          <div class="b b-ai"><span class="sk">To ma mrzí. Kde sa škrabe najviac?</span><span class="en">Sorry to hear that. Where does he scratch the most?</span></div>
+          <div class="b b-me"><span class="sk">Hlavne labky.</span><span class="en">Mostly his paws.</span></div>
+          <div class="b b-ai"><span class="sk">Rozumiem. Zmenili ste mu v poslednom čase krmivo?</span><span class="en">Got it. Did you change his food recently?</span></div>
+          <div class="chips"><span class="chip" id="yes"><span class="sk">Áno</span><span class="en">Yes</span></span><span class="chip"><span class="sk">Nie</span><span class="en">No</span></span><span class="chip"><span class="sk">Neviem</span><span class="en">Not sure</span></span></div>
+          <div class="sum">
+            <h5><svg class="ic"><use href="assets/icons.svg#i-clip"/></svg><span class="sk">AI zhrnutie pre veterinára</span><span class="en">AI summary for the vet</span></h5>
+            <dl class="sk"><dt>Príznak</dt><dd>Svrbiace labky</dd><dt>Od</dt><dd>Asi 1 týždeň</dd><dt>Krmivo</dt><dd>Nová značka</dd><dt>V profile</dt><dd>Alergia na kuracie</dd></dl>
+            <dl class="en"><dt>Symptom</dt><dd>Itchy paws</dd><dt>Since</dt><dd>About 1 week</dd><dt>Food</dt><dd>New brand</dd><dt>On file</dt><dd>Chicken allergy</dd></dl>
+            <div class="share"><svg class="ic"><use href="assets/icons.svg#i-send"/></svg><span class="sk">Zdieľať s veterinárom</span><span class="en">Share with vet</span></div>
+          </div>
+        </div>
+        <div class="c-input"><span class="sk">Správa o Bojarovi…</span><span class="en">Message about Bojar…</span><i><svg class="ic"><use href="assets/icons.svg#i-send"/></svg></i></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="poslanie" class="sec-mission">
+  <div class="wrap">
+    <div class="mission reveal">
+      <div class="mission-g">
+        <div>
+          <span class="kicker"><svg class="ic"><use href="assets/icons.svg#i-heart"/></svg><span class="sk">Naše poslanie</span><span class="en">Our mission</span></span>
+          <blockquote class="sk">Postaviť AI asistenta, ktorý veterinárom pomôže s prácou <span>pred návštevou aj po nej</span>, nie ich nahradiť.</blockquote>
+          <blockquote class="en">Build an AI assistant that helps vets with the work <span>before and after the appointment</span>, not one that replaces them.</blockquote>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pi"><svg class="ic"><use href="assets/icons.svg#i-paw"/></svg></div>
+            <div class="pt">
+              <h3 class="sk">Pre majiteľov</h3><h3 class="en">For owners</h3>
+              <p class="sk">Jednoduchý rozhovor namiesto hľadania na internete. K veterinárovi prídu pripravení a po návšteve majú pokyny aj pripomienky po ruke.</p>
+              <p class="en">A simple conversation instead of searching online. Owners arrive prepared and keep instructions and reminders at hand afterwards.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pi"><svg class="ic"><use href="assets/icons.svg#i-steth"/></svg></div>
+            <div class="pt">
+              <h3 class="sk">Pre veterinárov</h3><h3 class="en">For vets</h3>
+              <p class="sk">Zhrnutie na jednu stranu, prečítané za pár sekúnd. Žiadny otvorený chat a žiadne notifikácie mimo pracovného času.</p>
+              <p class="en">A one-page summary read in seconds. No open chat and no notifications outside working hours.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pi"><svg class="ic"><use href="assets/icons.svg#i-shield"/></svg></div>
+            <div class="pt">
+              <h3 class="sk">Bezpečne</h3><h3 class="en">Safe by design</h3>
+              <p class="sk">AI nediagnostikuje a nikdy neupokojuje. Odpovedá všeobecne a so zdrojom, dáta ukladáme len na serveri v EÚ.</p>
+              <p class="en">The AI never diagnoses and never reassures. It answers generally, with a source, and data stays on a server in the EU.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="preco" class="sec-why">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker"><svg class="ic"><use href="assets/icons.svg#i-flask"/></svg><span class="sk">Prečo to robíme</span><span class="en">Why we're building it</span></span>
+      <h2 class="sk">Majitelia nemajú informácie, veterinári nemajú čas.</h2>
+      <h2 class="en">Owners lack information, vets lack time.</h2>
+      <p class="lead sk">Pred vývojom sme prešli recenzované štúdie a európske štatistiky. Tieto čísla ukázali, že aplikácia najviac pomôže pred návštevou a po nej.</p>
+      <p class="lead en">Before development we reviewed peer-reviewed studies and European statistics. These numbers showed that the app helps most before and after the visit.</p>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="v">90 %+</div>
+        <p class="sk">veterinárov v&nbsp;Európe uvádza, že sú v&nbsp;strese</p><p class="en">of vets in Europe say they are stressed</p>
+        <a href="https://fve.org/cms/wp-content/uploads/FVE-Survey-2023_updated.pdf" target="_blank" rel="noopener">FVE 2023<svg class="ic"><use href="assets/icons.svg#i-arrow-up-right"/></svg></a></div>
+      <div class="stat reveal"><div class="v">47 %</div>
+        <p class="sk">majiteľov psov nepodávalo lieky podľa pokynov</p><p class="en">of dog owners didn't give medication as instructed</p>
+        <a href="https://doi.org/10.3390/ani14172557" target="_blank" rel="noopener">Odom et al., 2024<svg class="ic"><use href="assets/icons.svg#i-arrow-up-right"/></svg></a></div>
+      <div class="stat reveal"><div class="v">23 %</div>
+        <p class="sk">návštev – len v&nbsp;toľkých sa vôbec hovorí o&nbsp;cene</p><p class="en">of visits – the only ones where cost is discussed</p>
+        <a href="https://doi.org/10.2460/javma.22.06.0268" target="_blank" rel="noopener">Groves et al., 2022<svg class="ic"><use href="assets/icons.svg#i-arrow-up-right"/></svg></a></div>
+      <div class="stat reveal"><div class="v">+86 %</div>
+        <p class="sk">rast cien starostlivosti o&nbsp;zvieratá na Slovensku (2015–2025), v&nbsp;EÚ&nbsp;+36&nbsp;%</p><p class="en">rise in pet-care prices in Slovakia (2015–2025), EU&nbsp;+36%</p>
+        <a href="https://fred.stlouisfed.org/series/CP0934SKM086NEST" target="_blank" rel="noopener">Eurostat HICP<svg class="ic"><use href="assets/icons.svg#i-arrow-up-right"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<section id="aplikacia" class="band sec-app">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker"><svg class="ic"><use href="assets/icons.svg#i-paw"/></svg><span class="sk">Aplikácia</span><span class="en">The app</span></span>
+      <h2 class="sk">Takto vyzerá AI Vet</h2><h2 class="en">This is AI Vet</h2>
+    </div>
+    <div class="screens">
+      <figure class="screen reveal">
+        <div class="screen-frame"><img src="assets/img/screen-profile.webp" alt="Domovská obrazovka AI Vet s profilom psa Bojar" width="390" height="844" loading="lazy" decoding="async"></div>
+        <figcaption><h3><span class="n">1</span><span class="sk">Profil zvieraťa</span><span class="en">Pet profile</span></h3>
+          <p class="sk">Všetko o zvieratku na jednom mieste a AI asistent vždy po ruke.</p><p class="en">Everything about the pet in one place, with the AI assistant always at hand.</p></figcaption>
+      </figure>
+      <figure class="screen reveal">
+        <div class="screen-frame"><img src="assets/img/screen-chat.webp" alt="AI chat a zhrnutie pre veterinára" width="390" height="844" loading="lazy" decoding="async"></div>
+        <figcaption><h3><span class="n">2</span><span class="sk">AI rozhovor</span><span class="en">AI chat</span></h3>
+          <p class="sk">Krátke otázky a na konci zhrnutie, ktoré si majiteľ skontroluje.</p><p class="en">Short questions, ending in a summary the owner reviews.</p></figcaption>
+      </figure>
+      <figure class="screen reveal">
+        <div class="screen-frame"><img src="assets/img/screen-qr.webp" alt="QR kód pre veterinára" width="390" height="844" loading="lazy" decoding="async"></div>
+        <figcaption><h3><span class="n">3</span><span class="sk">Zdieľanie s veterinárom</span><span class="en">Sharing with the vet</span></h3>
+          <p class="sk">QR kód s časovo obmedzeným odkazom, bez inštalácie aplikácie.</p><p class="en">A QR code with an expiring link, no app install needed.</p></figcaption>
+      </figure>
+      <figure class="screen reveal">
+        <div class="screen-frame"><img src="assets/img/screen-reminders.webp" alt="Pripomienky liekov" width="390" height="844" loading="lazy" decoding="async"></div>
+        <figcaption><h3><span class="n">4</span><span class="sk">Pripomienky liekov</span><span class="en">Medication reminders</span></h3>
+          <p class="sk">Pokyny po návšteve a označenie podanej dávky.</p><p class="en">Post-visit instructions and marking a dose as given.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="funkcie">
+  <div class="wrap fx">
+    <div class="fx-side reveal">
+      <span class="kicker"><span class="sk">Funkcie</span><span class="en">Features</span></span>
+      <h2 class="sk">Čo AI Vet robí</h2><h2 class="en">What AI Vet does</h2>
+      <p class="lead sk">Každá funkcia vychádza z konkrétneho zistenia v našom výskume potrieb majiteľov a veterinárov.</p>
+      <p class="lead en">Each feature comes from a specific finding in our research into owners' and vets' needs.</p>
+      <div class="nope">
+        <h3 class="sk">A čo zámerne nerobí</h3><h3 class="en">And what it deliberately won't do</h3>
+        <ul>
+          <li><svg class="ic"><use href="assets/icons.svg#i-x"/></svg><span class="sk">nestanovuje diagnózu</span><span class="en">give a diagnosis</span></li>
+          <li><svg class="ic"><use href="assets/icons.svg#i-x"/></svg><span class="sk">neodporúča lieky ani dávky</span><span class="en">recommend medicines or doses</span></li>
+          <li><svg class="ic"><use href="assets/icons.svg#i-x"/></svg><span class="sk">neuvádza ceny</span><span class="en">quote prices</span></li>
+          <li><svg class="ic"><use href="assets/icons.svg#i-x"/></svg><span class="sk">nikdy nepovie „to nič nie je“</span><span class="en">say “it's nothing”</span></li>
+          <li><svg class="ic"><use href="assets/icons.svg#i-x"/></svg><span class="sk">nemá otvorený chat s veterinárom</span><span class="en">open a chat with the vet</span></li>
+        </ul>
+      </div>
+    </div>
+    <ol class="fx-list">
+      <li class="reveal"><span class="fx-i"><svg class="ic"><use href="assets/icons.svg#i-chat"/></svg></span><div>
+        <h3 class="sk">Rozhovor pred návštevou</h3><h3 class="en">Pre-visit chat</h3>
+        <p class="sk">AI sa pýta na príznaky, trvanie, jedlo a lieky, a to neutrálne, bez naznačovania príčiny. Na veľa otázok stačí ťuknúť.</p>
+        <p class="en">The AI asks about symptoms, duration, food and medication, neutrally and without hinting at a cause. Many questions take a single tap.</p></div></li>
+      <li class="reveal"><span class="fx-i"><svg class="ic"><use href="assets/icons.svg#i-clip"/></svg></span><div>
+        <h3 class="sk">Zhrnutie pre veterinára</h3><h3 class="en">Summary for the vet</h3>
+        <p class="sk">Len to, čo povedal majiteľ, s odkazom na jeho správu. Majiteľ ho pred zdieľaním skontroluje.</p>
+        <p class="en">Only what the owner said, linked to their message. The owner checks it before sharing.</p></div></li>
+      <li class="reveal"><span class="fx-i"><svg class="ic"><use href="assets/icons.svg#i-warn"/></svg></span><div>
+        <h3 class="sk">Varovné signály</h3><h3 class="en">Warning signs</h3>
+        <p class="sk">Pevné áno/nie otázky. Pri „áno“ aplikácia hneď odporučí zavolať na kliniku.</p>
+        <p class="en">Fixed yes/no questions. On “yes”, the app tells the owner to call the clinic right away.</p></div></li>
+      <li class="reveal"><span class="fx-i"><svg class="ic"><use href="assets/icons.svg#i-qr"/></svg></span><div>
+        <h3 class="sk">QR kód pre veterinára</h3><h3 class="en">QR code for the vet</h3>
+        <p class="sk">Veterinár otvorí zhrnutie bez inštalácie. Odkaz platí obmedzený čas a dá sa zrušiť.</p>
+        <p class="en">The vet opens the summary without installing anything. The link expires and can be revoked.</p></div></li>
+      <li class="reveal"><span class="fx-i"><svg class="ic"><use href="assets/icons.svg#i-bell"/></svg></span><div>
+        <h3 class="sk">Pokyny a pripomienky liekov</h3><h3 class="en">Instructions &amp; medication reminders</h3>
+        <p class="sk">Pokyny po návšteve aj ako fotka, pripomienky a záznam podanej dávky.</p>
+        <p class="en">Post-visit instructions, also as a photo, reminders and a record of each dose.</p></div></li>
+      <li class="reveal"><span class="fx-i"><svg class="ic"><use href="assets/icons.svg#i-coins"/></svg></span><div>
+        <h3 class="sk">Rozhovor o nákladoch</h3><h3 class="en">Talking about cost</h3>
+        <p class="sk">Majiteľ si zaškrtne, že chce hovoriť o cene. Veterinár to uvidí hneď v zhrnutí.</p>
+        <p class="en">Owners can tick that they want to discuss cost, and the vet sees it at the top of the summary.</p></div></li>
+      <li class="reveal"><span class="fx-i"><svg class="ic"><use href="assets/icons.svg#i-clinic"/></svg></span><div>
+        <h3 class="sk">Dashboard pre kliniky</h3><h3 class="en">Clinic dashboard</h3>
+        <p class="sk">Webový prehľad zhrnutí, ktoré majiteľ schválil. Prípady s varovným signálom sú navrchu.</p>
+        <p class="en">A web view of owner-approved summaries, with warning-sign cases on top.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="dashboard" class="band dash">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker"><span class="sk">Pre kliniky</span><span class="en">For clinics</span></span>
+      <h2 class="sk">Dashboard pre veterinárov</h2><h2 class="en">Dashboard for vets</h2>
+      <p class="lead sk">Webová aplikácia pre kliniky. Veterinár v nej vidí zhrnutia, ktoré mu majiteľ poslal, a históriu pacienta na jednom mieste.</p>
+      <p class="lead en">A web app for clinics. Vets see the summaries owners send them and the patient's history in one place.</p>
+    </div>
+    <div class="dash-stage reveal">
+      <figure class="bframe bf-main"><div class="bar"><span class="url">Prehľad kliniky</span></div><img src="assets/img/dashboard-overview.webp" alt="Dashboard kliniky – prehľad pacientov, žiadostí a upozornení" width="1600" height="1035" loading="lazy" decoding="async"></figure>
+      <figure class="bframe bf-side"><div class="bar"><span class="url">Karta pacienta</span></div><img src="assets/img/dashboard-patient.webp" alt="Karta pacienta s meraniami a AI zhrnutím pre veterinára" width="1600" height="1035" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="dash-pts">
+      <div class="reveal"><span class="di"><svg class="ic"><use href="assets/icons.svg#i-bell"/></svg></span><div><h3 class="sk">Prehľad dňa</h3><h3 class="en">Today at a glance</h3>
+        <p class="sk">Nové žiadosti od majiteľov a upozornenia na merania hneď po prihlásení.</p><p class="en">New owner requests and measurement alerts right after logging in.</p></div></div>
+      <div class="reveal"><span class="di"><svg class="ic"><use href="assets/icons.svg#i-clip"/></svg></span><div><h3 class="sk">Karta pacienta</h3><h3 class="en">Patient record</h3>
+        <p class="sk">Merania, zdravotný profil a AI zhrnutie, ktoré majiteľ schválil, aj s celým rozhovorom.</p><p class="en">Measurements, health profile and the owner-approved AI summary, with the full conversation.</p></div></div>
+      <div class="reveal"><span class="di"><svg class="ic"><use href="assets/icons.svg#i-shield"/></svg></span><div><h3 class="sk">Len so súhlasom</h3><h3 class="en">Consent first</h3>
+        <p class="sk">Klinika vidí záznam až vtedy, keď ho majiteľ zdieľa, a súhlas môže kedykoľvek zrušiť.</p><p class="en">The clinic sees a record only once the owner shares it, and consent can be revoked at any time.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tim">
+  <div class="wrap">
+    <div class="reveal tim-head">
+      <span class="kicker"><span class="sk">Kto sme</span><span class="en">Who we are</span></span>
+      <h2 class="sk">Tím 13</h2><h2 class="en">Team 13</h2>
+      <p class="lead sk">Sedem študentov inžinierskeho štúdia na Fakulte informatiky a informačných technológií STU v Bratislave.</p>
+      <p class="lead en">Seven Master's students at the Faculty of Informatics and Information Technologies, STU Bratislava.</p>
+    </div>
+    <div class="team-g" id="team"></div>
+    <div class="leads reveal">
+      <div class="lead-c"><small class="sk">Vedúca projektu</small><small class="en">Project lead</small><b>Tamara Papić, PhD</b><span>BabyFM</span></div>
+      <div class="lead-c"><small class="sk">Akademický vedúci</small><small class="en">Academic supervisor</small><b>Pavle Dakić, PhD</b><span>FIIT STU</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="zapoj-sa">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="kicker"><svg class="ic"><use href="assets/icons.svg#i-heart"/></svg><span class="sk">Zapoj sa</span><span class="en">Get involved</span></span>
+      <h2 class="sk">Pomôž nám s AI Vet</h2><h2 class="en">Help us shape AI Vet</h2>
+      <p class="lead sk">Prekliknite si prototyp a povedzte nám, čo si o ňom myslíte. Odpovede sú anonymné a zaberú pár minút.</p>
+      <p class="lead en">Click through the prototype and tell us what you think. Answers are anonymous and take a few minutes.</p>
+    </div>
+    <div class="join-g">
+      <div class="big proto reveal">
+        <img class="mini" src="assets/img/screen-signup.webp" alt="" width="390" height="844" loading="lazy" decoding="async">
+        <div class="pc">
+          <span class="kicker"><svg class="ic"><use href="assets/icons.svg#i-play"/></svg><span class="sk">Prototyp</span><span class="en">Prototype</span></span>
+          <h3 class="sk">Prekliknite si aplikáciu</h3><h3 class="en">Click through the app</h3>
+          <p class="sk">Interaktívny prototyp vo Figme – bez inštalácie, priamo v prehliadači.</p>
+          <p class="en">An interactive Figma prototype – no install, right in your browser.</p>
+          <div class="cta cta--tight"><a class="btn btn-p" data-link="figma" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="assets/icons.svg#i-play"/></svg><span class="sk">Otvoriť prototyp</span><span class="en">Open prototype</span><svg class="ic"><use href="assets/icons.svg#i-arrow"/></svg></a></div>
+          <div class="note"><svg class="ic"><use href="assets/icons.svg#i-bulb"/></svg><span class="sk">Najprv si prejdite prototyp, potom vyplňte dotazník.</span><span class="en">Go through the prototype first, then fill in the survey.</span></div>
+        </div>
+      </div>
+      <div class="big survey reveal">
+        <img class="mini" src="assets/img/screen-survey.webp" alt="" width="390" height="844" loading="lazy" decoding="async">
+        <div class="pc">
+          <span class="kicker"><svg class="ic"><use href="assets/icons.svg#i-clip"/></svg><span class="sk">Dotazník</span><span class="en">Survey</span></span>
+          <h3 class="sk">Ste majiteľ zvieraťa alebo veterinár?</h3><h3 class="en">Pet owner or vet?</h3>
+          <p class="sk">Spoločný dotazník vás podľa jazyka a roly nasmeruje na správnu verziu.</p>
+          <p class="en">The shared survey sends you to the right version based on your language and role.</p>
+          <div class="cta cta--tight"><a class="btn btn-p" data-link="survey" data-survey-gate href="#" target="_blank" rel="noopener"><svg class="ic"><use href="assets/icons.svg#i-note-pencil"/></svg><span class="sk">Spustiť dotazník</span><span class="en">Start the survey</span><svg class="ic"><use href="assets/icons.svg#i-arrow"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="wrap to-top">
+  <a class="btn btn-s btn-sm" href="#top"><span class="sk">Späť hore</span><span class="en">Back to top</span><svg class="ic"><use href="assets/icons.svg#i-arrow-up"/></svg></a>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo logo--sm" href="#top"><img src="assets/img/logo.webp" alt="" width="36" height="36">AI Vet</a>
+    <span class="sk">Tím 13, FIIT STU Bratislava, 2026/27</span>
+    <span class="en">Team 13, FIIT STU Bratislava, 2026/27</span>
+  </div>
+</footer>
+
+<dialog class="modal" id="survey-gate" aria-labelledby="gate-title">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="modal-x" type="submit"><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-x"/></svg><span class="sr-only"><span class="sk">Zavrieť</span><span class="en">Close</span></span></button>
+    </form>
+    <span class="modal-icon" aria-hidden="true"><svg class="ic"><use href="assets/icons.svg#i-play"/></svg></span>
+    <h2 id="gate-title"><span class="sk">Prešli ste si už prototyp?</span><span class="en">Have you tried the prototype?</span></h2>
+    <p class="sk">Dotazník sa pýta na váš názor na aplikáciu AI Vet. Aby ste vedeli odpovedať, prekliknite si najprv interaktívny prototyp vo Figme – zaberie to len pár minút.</p>
+    <p class="en">The survey asks what you think of the AI Vet app. To answer, please click through the interactive Figma prototype first – it only takes a few minutes.</p>
+    <p class="modal-done" hidden><svg class="ic" aria-hidden="true"><use href="assets/icons.svg#i-check"/></svg><span class="sk">Prototyp sa otvoril v&nbsp;novej karte. Keď si ho prejdete, pokračujte na dotazník.</span><span class="en">The prototype opened in a new tab. Once you've gone through it, continue to the survey.</span></p>
+    <div class="modal-actions">
+      <a class="btn btn-p" data-link="figma" data-gate-proto href="#" target="_blank" rel="noopener" autofocus><svg class="ic"><use href="assets/icons.svg#i-play"/></svg><span class="sk">Otvoriť prototyp</span><span class="en">Open prototype</span></a>
+      <a class="btn btn-s" data-link="survey" data-gate-continue href="#" target="_blank" rel="noopener"><span class="sk">Áno, pokračovať na dotazník</span><span class="en">Yes, continue to the survey</span><svg class="ic"><use href="assets/icons.svg#i-arrow"/></svg></a>
+    </div>
+  </div>
+</dialog>
 
 </body>
 </html>
